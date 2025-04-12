@@ -2,6 +2,10 @@
 
 Add a description here later
 
+## Test Coverage
+
+![Coverage](./coverage_badge.svg?sanitize=true)
+
 ## Documentations
 
 Description for [documentation](/documentation/tekio_forms_doc.md)
