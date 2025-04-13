@@ -11,6 +11,9 @@ You can edit the following fields:
  - fieldLabel used to show the label of the field
  - fieldHint used to show a hint for the field
  - maxLines used to restrict the max lines that can be shown at a time **(default is 1)**
+ - minLines **(requires maxLines)**  used to restrict the min lines that can be shown at a time
+ - maxLength used to restrict the length of the text 
+
 
 
 ## Json Format

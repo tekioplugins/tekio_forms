@@ -10,6 +10,8 @@ class FormFieldsModel {
   String? fieldLabel;
   String? fieldHint;
   int? maxLines;
+  int? minLines;
+  int? maxLength;
 
   FormFieldsModel({
     required this.fieldKey,
@@ -17,6 +19,8 @@ class FormFieldsModel {
     this.fieldLabel,
     this.fieldHint,
     this.maxLines,
+    this.minLines,
+    this.maxLength,
   });
 
   factory FormFieldsModel.fromJson(Map<String, dynamic> json) {
@@ -26,6 +30,8 @@ class FormFieldsModel {
       fieldLabel: json['fieldLabel'],
       fieldHint: json['fieldHint'],
       maxLines: json['maxLines'],
+      minLines: json['minLines'],
+      maxLength: json['maxLength'],
     );
   }
 
@@ -36,6 +42,8 @@ class FormFieldsModel {
       'fieldLabel': fieldLabel,
       'fieldHint': fieldHint,
       'maxLines': maxLines,
+      'minLines': minLines,
+      'maxLength': maxLength,
     };
   }
 }

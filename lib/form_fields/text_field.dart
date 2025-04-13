@@ -17,7 +17,9 @@ class TekioTextField extends StatelessWidget {
         labelText: fieldDataModel.fieldLabel,
         hintText: fieldDataModel.fieldHint,
       ),
-      maxLines: fieldDataModel.maxLines ?? 1,
+      maxLines: fieldDataModel.maxLines,
+      minLines: fieldDataModel.minLines,
+      maxLength: fieldDataModel.maxLength,
     );
   }
 }
