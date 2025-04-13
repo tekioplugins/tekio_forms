@@ -10,6 +10,7 @@ You can edit the following fields:
  - fieldType **(required)** this needs to be of type **textField**
  - fieldLabel used to show the label of the field
  - fieldHint used to show a hint for the field
+ - maxLines used to restrict the max lines that can be shown at a time **(default is 1)**
 
 
 ## Json Format
@@ -21,4 +22,5 @@ Json format to show those fields
        "fieldType":"textField",
        "fieldLabel":"text label",
        "fieldHint":"text hint",
+       "maxLines": 10
     }

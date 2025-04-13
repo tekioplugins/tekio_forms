@@ -9,12 +9,14 @@ class FormFieldsModel {
   TekioFieldEnum? fieldType;
   String? fieldLabel;
   String? fieldHint;
+  int? maxLines;
 
   FormFieldsModel({
     required this.fieldKey,
     required this.fieldType,
     this.fieldLabel,
     this.fieldHint,
+    this.maxLines,
   });
 
   factory FormFieldsModel.fromJson(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class FormFieldsModel {
       fieldType: TekioFieldEnum.fromJson(json['fieldType']),
       fieldLabel: json['fieldLabel'],
       fieldHint: json['fieldHint'],
+      maxLines: json['maxLines'],
     );
   }
 
@@ -32,6 +35,7 @@ class FormFieldsModel {
       'fieldType': TekioFieldEnum.toJson(fieldType),
       'fieldLabel': fieldLabel,
       'fieldHint': fieldHint,
+      'maxLines': maxLines,
     };
   }
 }
