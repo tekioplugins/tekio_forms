@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:tekio_forms/form_fields/text_field.dart';
 import 'package:tekio_forms/models/form_base_model.dart';
-import 'package:tekio_forms/models/form_type_enum.dart';
+import 'package:tekio_forms/models/form_field_enum.dart';
 
 class TekioBaseFormBuilder extends StatelessWidget {
   TekioBaseFormBuilder({super.key, required this.formData});
@@ -15,13 +15,16 @@ class TekioBaseFormBuilder extends StatelessWidget {
     return Form(
       key: _formKey,
       child: Column(
-        children:
-            formData.formFields.map((field) {
-              switch (field.fieldType) {
-                case TekioFieldTypeEnum.textField:
-                  return TekioTextField(fieldDataModel: field);
-              }
-            }).toList(),
+        children: List.from(
+          formData.formFields.map((field) {
+            switch (field.fieldType) {
+              case TekioFieldEnum.textField:
+                return TekioTextField(fieldDataModel: field);
+              default:
+                return SizedBox();
+            }
+          }),
+        ),
       ),
     );
   }
