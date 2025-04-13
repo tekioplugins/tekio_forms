@@ -8,6 +8,8 @@ You can edit the following fields:
 
  - fieldKey **(required)**- field that represents the key value that represents the field, this needs to be unique.
  - fieldType **(required)** this needs to be of type **textField**
+ - fieldLabel used to show the label of the field
+ - fieldHint used to show a hint for the field
 
 
 ## Json Format
@@ -17,4 +19,6 @@ Json format to show those fields
     {
        "fieldKey":"field-text-key",
        "fieldType":"textField",
+       "fieldLabel":"text label",
+       "fieldHint":"text hint",
     }

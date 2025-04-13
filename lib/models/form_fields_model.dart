@@ -7,13 +7,22 @@ import 'package:tekio_forms/models/form_field_enum.dart';
 class FormFieldsModel {
   String fieldKey;
   TekioFieldEnum? fieldType;
+  String? fieldLabel;
+  String? fieldHint;
 
-  FormFieldsModel({required this.fieldKey, required this.fieldType});
+  FormFieldsModel({
+    required this.fieldKey,
+    required this.fieldType,
+    this.fieldLabel,
+    this.fieldHint,
+  });
 
   factory FormFieldsModel.fromJson(Map<String, dynamic> json) {
     return FormFieldsModel(
       fieldKey: json['fieldKey'],
       fieldType: TekioFieldEnum.fromJson(json['fieldType']),
+      fieldLabel: json['fieldLabel'],
+      fieldHint: json['fieldHint'],
     );
   }
 
@@ -21,6 +30,8 @@ class FormFieldsModel {
     return {
       'fieldKey': fieldKey,
       'fieldType': TekioFieldEnum.toJson(fieldType),
+      'fieldLabel': fieldLabel,
+      'fieldHint': fieldHint,
     };
   }
 }

@@ -11,6 +11,12 @@ class TekioTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(key: Key(fieldDataModel.fieldKey));
+    return TextFormField(
+      key: Key(fieldDataModel.fieldKey),
+      decoration: InputDecoration(
+        labelText: fieldDataModel.fieldLabel,
+        hintText: fieldDataModel.fieldHint,
+      ),
+    );
   }
 }
