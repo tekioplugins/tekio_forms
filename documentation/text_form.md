@@ -25,5 +25,7 @@ Json format to show those fields
        "fieldType":"textField",
        "fieldLabel":"text label",
        "fieldHint":"text hint",
-       "maxLines": 10
+       "maxLines": 2,
+       "minLines": 5,
+       "maxLength": 100
     }
