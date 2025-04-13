@@ -2,20 +2,15 @@
 // Can be removed later or used to continue the development of the text field
 
 import 'package:flutter/material.dart';
-import 'package:tekio_forms/models/fields_data_model.dart';
+import 'package:tekio_forms/models/form_fields_model.dart';
 
 class TekioTextField extends StatelessWidget {
-  final FieldsDataModel fieldDataModel;
+  final FormFieldsModel fieldDataModel;
 
   const TekioTextField({super.key, required this.fieldDataModel});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      key: Key(fieldDataModel.fieldKey),
-      decoration: InputDecoration(labelText: fieldDataModel.fieldLabel),
-      maxLength: fieldDataModel.maxLength,
-      maxLines: fieldDataModel.maxLength,
-    );
+    return TextFormField(key: Key(fieldDataModel.fieldKey));
   }
 }
