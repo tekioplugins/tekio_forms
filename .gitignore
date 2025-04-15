@@ -9,6 +9,9 @@
 .history
 .svn/
 migrate_working_dir/
+coverage/
+node_modules/
+yarn.lock
 
 # IntelliJ related
 *.iml

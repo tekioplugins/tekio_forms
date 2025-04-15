@@ -1,0 +1,10 @@
+{
+  "name": "tekio_forms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Tekio-Plugins/tekio_forms.git",
+  "license": "MIT",
+  "dependencies": {
+    "lcov2badge": "^0.1.2"
+  }
+}
