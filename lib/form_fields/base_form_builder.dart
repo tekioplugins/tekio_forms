@@ -21,7 +21,7 @@ class TekioBaseFormBuilder extends StatelessWidget {
               case TekioFieldEnum.textField:
                 return TekioTextField(fieldDataModel: field);
               default:
-                return SizedBox();
+                return const SizedBox();
             }
           }),
         ),

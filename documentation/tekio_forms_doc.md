@@ -5,8 +5,6 @@ Welcome to the Tekio Forms Documentation.
 
 ## Documentations
 
-Small text for documentation
-
 - [Base Form Builder](/documentation/base_form_builder.md)
 
 - [Text Form](/documentation/text_form.md)

@@ -5,9 +5,9 @@ part '../generated/models/form_base_model.g.dart';
 
 @JsonSerializable()
 class FormBaseModel {
-  @JsonKey(name: 'form_key')
+  @JsonKey(name: 'formKey')
   String formKey;
-  @JsonKey(name: 'form_fields')
+  @JsonKey(name: 'formFields')
   List<FormFieldsModel> formFields;
 
   FormBaseModel({required this.formKey, required this.formFields});

@@ -15,6 +15,6 @@ node covBadgeGen.js
 
 ## Documentations
 
-You can find the package documentation here :[documentation](/documentation/tekio_forms_doc.md)
+You can find the package documentation here: [documentation](/documentation/tekio_forms_doc.md)
 
 
