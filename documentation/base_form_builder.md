@@ -1,11 +1,15 @@
 # Base Form Builder!
 
-This is only for initial planning and development json will change trough planning 
+This is the base form widget, its the base that gets all fields and builds upon them.
 
 
 ## Fields
 
-Explain all fields possible to be done 
+You can edit the following fields:
+
+ - formKey **(required)** - Field that represents the key value that represents the field, this needs to be unique.
+ - formFields **(required)** - List of fields to build.
+
 
 ## Json Format
 

@@ -1,20 +1,18 @@
 # Text Field!
 
-Add a description here later
+This is the Text field it created the text field
 
 ## Fields
 
 You can edit the following fields:
 
- - fieldKey **(required)**- field that represents the key value that represents the field, this needs to be unique.
- - fieldType **(required)** this needs to be of type **textField**
- - fieldLabel used to show the label of the field
- - fieldHint used to show a hint for the field
- - maxLines used to restrict the max lines that can be shown at a time **(default is 1)**
- - minLines **(requires maxLines)**  used to restrict the min lines that can be shown at a time
- - maxLength used to restrict the length of the text 
-
-
+ - fieldKey **(required)** - Field that represents the key value that represents the field, this needs to be unique.
+ - fieldType **(required)** - This needs to be of type **textField**.
+ - fieldLabel - Used to show the label of the field.
+ - fieldHint - Used to show a hint for the field.
+ - maxLines - Used to restrict the max lines that can be shown at a time **(default is 1)**.
+ - minLines - **(requires maxLines)** Used to restrict the min lines that can be shown at a time.
+ - maxLength - Used to restrict the length of the text.
 
 ## Json Format
 
