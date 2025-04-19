@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-enum TekioFieldEnum {
+enum TekioFieldType {
   @JsonValue("textField")
   textField,
 }
