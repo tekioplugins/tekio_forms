@@ -1,6 +1,7 @@
 # Welcome to Tekio Forms Package!
 
-Add a description here later
+Welcome to Tekio form.
+This package allows you to build a complex form with just a json.
 
 ## Test Coverage
 Use the following commands to test and generate coverage report:
@@ -14,8 +15,6 @@ node covBadgeGen.js
 
 ## Documentations
 
-Description for [documentation](/documentation/tekio_forms_doc.md)
+You can find the package documentation here: [documentation](/documentation/tekio_forms_doc.md)
 
-## Example
 
-Simple example to show the possibility with pictures
