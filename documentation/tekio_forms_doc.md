@@ -7,15 +7,21 @@ Welcome to the Tekio Forms Documentation.
 
 - [Base Form Builder](/documentation/base_form_builder.md)
 
-- [Section Form Builder](/documentation/section_form_builder.md.md)
+- [Section Form Builder](/documentation/section_form_builder.md)
 
-- [Subsection Form Builder](/documentation/subsection_form_builder.md.md)
+- [Subsection Form Builder](/documentation/subsection_form_builder.md)
 
 - [Text Form](/documentation/text_form.md)
 
 - [Email Form](/documentation/email_form.md)
 
 - [Number Form](/documentation/number_form.md)
+
+- [Password Form](/documentation/password_form_builder.md)
+
+- [Dropdown Form](/documentation/dropdown_form_builder.md)
+
+- [Checkbox Form](/documentation/checkbox_form_builder.md)
 
 ## Example
 
