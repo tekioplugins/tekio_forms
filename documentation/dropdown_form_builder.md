@@ -1,6 +1,6 @@
-# Text Field Builder!
+# Dropdown Field Builder!
 
-This is the text field form widget, its responsible to create the text field of the form.
+This is the dropdown field form widget, its responsible to create the dropdown field of the form.
 
 ## Fields
 

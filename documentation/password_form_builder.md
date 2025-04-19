@@ -1,6 +1,6 @@
-# Text Field Builder!
+# Password Field Builder!
 
-This is the text field form widget, its responsible to create the text field of the form.
+This is the password field form widget, its responsible to create the password field of the form.
 
 ## Fields
 
