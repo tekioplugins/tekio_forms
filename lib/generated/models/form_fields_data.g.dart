@@ -6,8 +6,8 @@ part of '../../models/form_fields_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FormFieldsModel _$FormFieldsModelFromJson(Map<String, dynamic> json) =>
-    FormFieldsModel(
+FormFieldsData _$FormFieldsDataFromJson(Map<String, dynamic> json) =>
+    FormFieldsData(
       fieldKey: json['fieldKey'] as String,
       fieldType:
           $enumDecodeNullable(_$TekioFieldTypeEnumMap, json['fieldType']),
@@ -18,7 +18,7 @@ FormFieldsModel _$FormFieldsModelFromJson(Map<String, dynamic> json) =>
       maxLength: (json['maxLength'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$FormFieldsModelToJson(FormFieldsModel instance) =>
+Map<String, dynamic> _$FormFieldsDataToJson(FormFieldsData instance) =>
     <String, dynamic>{
       'fieldKey': instance.fieldKey,
       'fieldType': _$TekioFieldTypeEnumMap[instance.fieldType],

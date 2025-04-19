@@ -19,7 +19,7 @@ class TekioBaseFormBuilder extends StatelessWidget {
           formData.formFields.map((field) {
             switch (field.fieldType) {
               case TekioFieldType.textField:
-                return TekioTextField(fieldDataModel: field);
+                return TekioTextField(formFieldsData: field);
               default:
                 return const SizedBox();
             }

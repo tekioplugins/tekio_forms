@@ -8,7 +8,7 @@ import 'package:tekio_forms/models/form_field_type.dart';
 part '../generated/models/form_fields_data.g.dart';
 
 @JsonSerializable()
-class FormFieldsModel {
+class FormFieldsData {
   @JsonKey(name: 'fieldKey')
   String fieldKey;
   @JsonKey(name: 'fieldType')
@@ -24,7 +24,7 @@ class FormFieldsModel {
   @JsonKey(name: 'maxLength')
   int? maxLength;
 
-  FormFieldsModel({
+  FormFieldsData({
     required this.fieldKey,
     required this.fieldType,
     this.fieldLabel,
@@ -34,8 +34,8 @@ class FormFieldsModel {
     this.maxLength,
   });
 
-  factory FormFieldsModel.fromJson(Map<String, dynamic> json) =>
-      _$FormFieldsModelFromJson(json);
+  factory FormFieldsData.fromJson(Map<String, dynamic> json) =>
+      _$FormFieldsDataFromJson(json);
 
-  Map<String, dynamic> toJson() => _$FormFieldsModelToJson(this);
+  Map<String, dynamic> toJson() => _$FormFieldsDataToJson(this);
 }

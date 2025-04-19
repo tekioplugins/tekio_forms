@@ -9,7 +9,7 @@ part of '../../models/form_base_data.dart';
 FormBaseData _$FormBaseDataFromJson(Map<String, dynamic> json) => FormBaseData(
       formKey: json['formKey'] as String,
       formFields: (json['formFields'] as List<dynamic>)
-          .map((e) => FormFieldsModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => FormFieldsData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

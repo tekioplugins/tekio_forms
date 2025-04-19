@@ -5,20 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/form_fields_data.dart';
 
 class TekioTextField extends TextFormField {
-  final FormFieldsModel fieldDataModel;
+  final FormFieldsData formFieldsData;
 
-  TekioTextField({super.key, required this.fieldDataModel});
+  TekioTextField({super.key, required this.formFieldsData});
 
   Widget build(BuildContext context) {
     return TextFormField(
-      key: Key(fieldDataModel.fieldKey),
+      key: Key(formFieldsData.fieldKey),
       decoration: InputDecoration(
-        labelText: fieldDataModel.fieldLabel,
-        hintText: fieldDataModel.fieldHint,
+        labelText: formFieldsData.fieldLabel,
+        hintText: formFieldsData.fieldHint,
       ),
-      maxLines: fieldDataModel.maxLines,
-      minLines: fieldDataModel.minLines,
-      maxLength: fieldDataModel.maxLength,
+      maxLines: formFieldsData.maxLines,
+      minLines: formFieldsData.minLines,
+      maxLength: formFieldsData.maxLength,
     );
   }
 }

@@ -8,7 +8,7 @@ class FormBaseData {
   @JsonKey(name: 'formKey')
   String formKey;
   @JsonKey(name: 'formFields')
-  List<FormFieldsModel> formFields;
+  List<FormFieldsData> formFields;
 
   FormBaseData({required this.formKey, required this.formFields});
 
