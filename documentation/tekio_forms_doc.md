@@ -7,6 +7,10 @@ Welcome to the Tekio Forms Documentation.
 
 - [Base Form Builder](/documentation/base_form_builder.md)
 
+- [Section Form Builder](/documentation/section_form_builder.md.md)
+
+- [Subsection Form Builder](/documentation/subsection_form_builder.md.md)
+
 - [Text Form](/documentation/text_form.md)
 
 - [Email Form](/documentation/email_form.md)
