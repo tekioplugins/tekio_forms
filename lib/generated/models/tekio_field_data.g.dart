@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of '../../models/tekio_field_data.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioFieldData(
+      fieldKey: json['fieldKey'] as String,
+      fieldType: $enumDecodeNullable(_$TekioFieldTypeEnumMap, json['fieldType']),
+      fieldLabel: json['fieldLabel'] as String?,
+      fieldHint: json['fieldHint'] as String?,
+      maxLines: (json['maxLines'] as num?)?.toInt(),
+      minLength: (json['minLength'] as num?)?.toInt(),
+      maxLength: (json['maxLength'] as num?)?.toInt(),
+      isMandatory: json['isMandatory'] as bool?,
+      order: (json['order'] as num?)?.toInt(),
+      regexValidation: json['regexValidation'] as String?,
+      maxValue: (json['maxValue'] as num?)?.toInt(),
+      minValue: (json['minValue'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String, dynamic>{
+      'order': instance.order,
+      'fieldKey': instance.fieldKey,
+      'fieldType': _$TekioFieldTypeEnumMap[instance.fieldType],
+      'fieldLabel': instance.fieldLabel,
+      'fieldHint': instance.fieldHint,
+      'maxLines': instance.maxLines,
+      'minLength': instance.minLength,
+      'maxLength': instance.maxLength,
+      'minValue': instance.minValue,
+      'maxValue': instance.maxValue,
+      'isMandatory': instance.isMandatory,
+      'regexValidation': instance.regexValidation,
+    };
+
+const _$TekioFieldTypeEnumMap = {
+  TekioFieldType.textField: 'textField',
+};
