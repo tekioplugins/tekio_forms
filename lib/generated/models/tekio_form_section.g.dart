@@ -11,8 +11,8 @@ TekioFormSection _$TekioFormSectionFromJson(Map<String, dynamic> json) => TekioF
       sectionTitle: json['sectionTitle'] as String?,
       sectionSubtitle: json['sectionSubtitle'] as String?,
       sectionKey: json['sectionKey'] as String,
-      subSections: (json['subSections'] as List<dynamic>?)
-          ?.map((e) => TekioFormSubSection.fromJson(e as Map<String, dynamic>))
+      formFields: (json['formFields'] as List<dynamic>?)
+          ?.map((e) => TekioFieldData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -21,5 +21,5 @@ Map<String, dynamic> _$TekioFormSectionToJson(TekioFormSection instance) => <Str
       'sectionTitle': instance.sectionTitle,
       'sectionSubtitle': instance.sectionSubtitle,
       'order': instance.order,
-      'subSections': instance.subSections,
+      'formFields': instance.formFields,
     };

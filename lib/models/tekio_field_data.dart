@@ -11,6 +11,8 @@ part '../generated/models/tekio_field_data.g.dart';
 class TekioFieldData {
   @JsonKey(name: 'order')
   int? order;
+  @JsonKey(name: 'groupingKey')
+  String? groupingKey;
   @JsonKey(name: 'fieldKey')
   String fieldKey;
   @JsonKey(name: 'fieldType')
@@ -35,6 +37,7 @@ class TekioFieldData {
   String? regexValidation;
   TekioFieldData({
     required this.fieldKey,
+    this.groupingKey,
     required this.fieldType,
     this.fieldLabel,
     this.fieldHint,

@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:tekio_forms/models/tekio_form_sub_section.dart';
+import 'package:tekio_forms/models/tekio_field_data.dart';
 
 part '../generated/models/tekio_form_section.g.dart';
 
@@ -13,15 +13,15 @@ class TekioFormSection {
   String? sectionSubtitle;
   @JsonKey(name: 'order')
   int? order;
-  @JsonKey(name: 'subSections')
-  List<TekioFormSubSection>? subSections;
+  @JsonKey(name: 'formFields')
+  List<TekioFieldData>? formFields;
 
   TekioFormSection({
     this.order,
     this.sectionTitle,
     this.sectionSubtitle,
     required this.sectionKey,
-    this.subSections,
+    this.formFields,
   });
 
   factory TekioFormSection.fromJson(Map<String, dynamic> json) => _$TekioFormSectionFromJson(json);

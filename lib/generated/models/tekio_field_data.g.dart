@@ -8,6 +8,7 @@ part of '../../models/tekio_field_data.dart';
 
 TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioFieldData(
       fieldKey: json['fieldKey'] as String,
+      groupingKey: json['groupingKey'] as String?,
       fieldType: $enumDecodeNullable(_$TekioFieldTypeEnumMap, json['fieldType']),
       fieldLabel: json['fieldLabel'] as String?,
       fieldHint: json['fieldHint'] as String?,
@@ -23,6 +24,7 @@ TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioField
 
 Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String, dynamic>{
       'order': instance.order,
+      'groupingKey': instance.groupingKey,
       'fieldKey': instance.fieldKey,
       'fieldType': _$TekioFieldTypeEnumMap[instance.fieldType],
       'fieldLabel': instance.fieldLabel,
