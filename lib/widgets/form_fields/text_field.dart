@@ -2,10 +2,10 @@
 // Can be removed later or used to continue the development of the text field
 
 import 'package:flutter/material.dart';
-import 'package:tekio_forms/models/form_fields_data.dart';
+import 'package:tekio_forms/models/tekio_field_data.dart';
 
 class TekioTextField extends TextFormField {
-  final FormFieldsData formFieldsData;
+  final TekioFieldData formFieldsData;
 
   TekioTextField({super.key, required this.formFieldsData});
 
@@ -17,7 +17,7 @@ class TekioTextField extends TextFormField {
         hintText: formFieldsData.fieldHint,
       ),
       maxLines: formFieldsData.maxLines,
-      minLines: formFieldsData.minLines,
+      // minLines: formFieldsData.minLines,
       maxLength: formFieldsData.maxLength,
     );
   }
