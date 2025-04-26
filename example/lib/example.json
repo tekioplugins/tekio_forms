@@ -9,7 +9,12 @@
          "sectionTitle":"Section 1",
          "sectionSubtitle":"Fill section 1",
          "formFields":[
-            
+            {
+               "order":0,
+               "fieldKey":"field-1",
+               "fieldLabel":"Name",
+               "fieldType":"textField"
+            }
          ]
       },
       {
@@ -18,7 +23,12 @@
          "sectionTitle":"Section 2",
          "sectionSubtitle":"Fill section 2",
          "formFields":[
-            
+            {
+               "order":0,
+               "fieldKey":"field-1",
+               "fieldLabel":"Name",
+               "fieldType":"textField"
+            }
          ]
       }
    ]
