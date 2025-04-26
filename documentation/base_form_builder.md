@@ -6,20 +6,20 @@ This is the base form widget, its responsible to create the form.
 
 You can edit the following fields:
 
-- formTile **(required)** - Form title.
-- formSubTitle - Form subtitle.
-- formKey **(required)** - Used to represent the form on the app.
-- formSections - List of sections to build.
+- formKey **(required)** - Field that represents the key value that represents the form, this needs to be unique.
+- formSection **(required)** - List of sections to build.
+- formTitle - String to be displayed on appbar. **If missing no app bar will render**
+- formSubTitle - String to be displayed on appbar subtitle.
 
 ## Json Format
 
 Json format to show those fields
 
     {
-       "formTile":"form_title",
-       "formSubTitle":"form_subtitle",
-       "formKey":"form_key",
-       "formSections":[
-          //Add Sections here
+      "formTile": "Super Awsome Form",
+      "formSubTitle": "Subtitle",
+      "formKey": "my-form-key",
+      "formSections": [
+         //Add here subSections
        ]
     }
