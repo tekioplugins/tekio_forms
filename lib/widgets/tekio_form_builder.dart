@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:tekio_forms/models/models.dart';
-import 'package:tekio_forms/widgets/tekio_section.dart';
+import 'package:tekio_forms/widgets/tekio_form.dart';
 
 class TekioForm extends StatelessWidget {
   TekioForm({super.key, required this.formData});
   final TekioFormData formData;
-  final GlobalKey _formKey = GlobalKey<FormBuilderState>();
+  final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,22 @@ class TekioForm extends StatelessWidget {
       appBar: AppBar(
         title: Text(formData.formTile ?? ''),
         centerTitle: true,
+        // bottom: PreferredSize(
+        //   preferredSize: Size.fromHeight(50.0),
+        //   child: Row(
+        //     children: [
+        //       IconButton(
+        //           onPressed: () {}, icon: Icon(Icons.arrow_back_rounded)),
+        //       Expanded(
+        //           child: Text(
+        //         "TEXT DAwdwTA",
+        //         textAlign: TextAlign.center,
+        //       )),
+        //       IconButton(
+        //           onPressed: () {}, icon: Icon(Icons.arrow_forward_rounded))
+        //     ],
+        //   ),
+        // ),
       ),
       body: FormBuilder(
         key: _formKey,
@@ -21,9 +37,15 @@ class TekioForm extends StatelessWidget {
           formSectionData: formData.formSections.first,
         ),
       ),
-      bottomSheet: FilledButton(
-        onPressed: () {},
-        child: Text('DAT BUTTON'),
+      bottomNavigationBar: SizedBox(
+        width: double.infinity,
+        child: FilledButton(
+          onPressed: () {
+            _formKey.currentState?.saveAndValidate();
+            debugPrint(_formKey.currentState?.value.toString());
+          },
+          child: Text('DAT BUTTON'),
+        ),
       ),
     );
   }
