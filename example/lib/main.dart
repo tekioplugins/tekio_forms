@@ -1,20 +1,23 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-void main() {
-  runApp(const MainApp());
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:tekio_forms/models/tekio_form_data.dart';
+import 'package:tekio_forms/widgets/tekio_form_builder.dart';
+
+Future<void> main() async {
+  final String jsonExample = await rootBundle.loadString('lib/example.json');
+  runApp(
+    FormExample(formData: TekioFormData.fromJson(jsonDecode(jsonExample))),
+  );
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class FormExample extends StatelessWidget {
+  final TekioFormData formData;
+  const FormExample({super.key, required this.formData});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return MaterialApp(home: Scaffold(body: TekioForm(formData: formData)));
   }
 }

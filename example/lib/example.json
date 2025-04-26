@@ -1,0 +1,25 @@
+{
+   "formTile":"Super Awesome Form Example",
+   "formSubTitle":"Subtitle",
+   "formKey":"my-form-key",
+   "formSections":[
+      {
+         "order":0,
+         "sectionKey":"first-section",
+         "sectionTitle":"Section 1",
+         "sectionSubtitle":"Fill section 1",
+         "formFields":[
+            
+         ]
+      },
+      {
+         "order":1,
+         "sectionKey":"second-section",
+         "sectionTitle":"Section 2",
+         "sectionSubtitle":"Fill section 2",
+         "formFields":[
+            
+         ]
+      }
+   ]
+}
