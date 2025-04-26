@@ -28,20 +28,3 @@ class TekioForm extends StatelessWidget {
     );
   }
 }
-
-
-
-
-   //  TekioSection(
-
-      //   formSectionData:
-      // ),
-
-      // List.generate(
-      //   formData.formSections.length,
-      //   (index) => formData.formSections.firstWhere(
-      //     (element) => element.order == index,
-      //   ),
-      //   growable: false,
-      // ),
-      // initialValue: , // NOTE:This will be useful later to use initial values by field.
