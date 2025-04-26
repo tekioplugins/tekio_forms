@@ -10,9 +10,9 @@
          "sectionSubtitle":"Fill section 1",
          "formFields":[
             {
-               "order":0,
+               "order":1,
                "fieldKey":"field-1",
-               "fieldLabel":"Name",
+               "fieldLabel":"SPECIAL",
                "fieldType":"textField"
             },
             {
