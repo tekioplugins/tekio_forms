@@ -20,6 +20,12 @@ class _FormExampleState extends State<FormExample> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+      ),
       home: FutureBuilder<String>(
         future: rootBundle.loadString('lib/example.json'),
         builder: (context, snapshot) {

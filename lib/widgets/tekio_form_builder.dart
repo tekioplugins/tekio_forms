@@ -24,11 +24,20 @@ class _TekioFormState extends State<TekioForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key(widget.formData.formKey),
       appBar: AppBar(
         title: Column(
           children: [
-            Text(widget.formData.formTile ?? ''),
-            Text(widget.formData.formSubTitle ?? ''),
+            Text(
+              widget.formData.formTile ?? '',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Text(
+              widget.formData.formSubTitle ?? '',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ],
         ),
         centerTitle: true,
@@ -36,8 +45,10 @@ class _TekioFormState extends State<TekioForm> {
       body: FormBuilder(
           key: _formKey,
           child: ListView.builder(
+            padding: EdgeInsets.all(10.0),
             itemBuilder: (context, index) => TekioSection(
               formSectionData: widget.formData.formSections[index],
+              context: context,
             ),
             itemCount: widget.formData.formSections.length,
           )),
