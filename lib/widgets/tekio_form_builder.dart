@@ -21,6 +21,7 @@ class _TekioFormState extends State<TekioForm> {
         .sort((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
     super.initState();
   }
+// TODO: ADD THEME LATER
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +30,20 @@ class _TekioFormState extends State<TekioForm> {
       appBar: AppBar(
         title: Column(
           children: [
-            Text(
-              widget.formData.formTile ?? '',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            Text(
-              widget.formData.formSubTitle ?? '',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
+            if (widget.formData.formTile != null &&
+                widget.formData.formTile!.isNotEmpty)
+              Text(
+                widget.formData.formTile ?? '',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            if (widget.formData.formSubTitle != null &&
+                widget.formData.formSubTitle!.isNotEmpty)
+              Text(
+                widget.formData.formSubTitle ?? '',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
           ],
         ),
         centerTitle: true,
