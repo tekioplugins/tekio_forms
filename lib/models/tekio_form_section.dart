@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:tekio_forms/models/tekio_field_data.dart';
 
@@ -21,10 +22,12 @@ class TekioFormSection {
     this.sectionTitle,
     this.sectionSubtitle,
     required this.sectionKey,
-    this.formFields,
-  });
+    List<TekioFieldData>? formFields,
+  }) : formFields = formFields
+            ?.sorted((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
 
-  factory TekioFormSection.fromJson(Map<String, dynamic> json) => _$TekioFormSectionFromJson(json);
+  factory TekioFormSection.fromJson(Map<String, dynamic> json) =>
+      _$TekioFormSectionFromJson(json);
 
   Map<String, dynamic> toJson() => _$TekioFormSectionToJson(this);
 }
