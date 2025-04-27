@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/models.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
-// TODO: Convert to list view in order to load only the visible widgets
 class TekioSection extends Column {
   TekioSection({
     required TekioFormSection formSectionData,
