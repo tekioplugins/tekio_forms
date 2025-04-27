@@ -38,6 +38,7 @@ class _FormExampleState extends State<FormExample> {
           }
           return TekioForm(
             formData: TekioFormData.fromJson(jsonDecode(snapshot.data!)),
+            onSubmit: (p0) => print(p0),
           );
         },
       ),

@@ -4,8 +4,9 @@ import 'package:tekio_forms/models/models.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
 class TekioForm extends StatefulWidget {
-  const TekioForm({super.key, required this.formData});
+  const TekioForm({super.key, required this.formData, required this.onSubmit});
   final TekioFormData formData;
+  final Function(Map<String, dynamic>?) onSubmit;
 
   @override
   State<TekioForm> createState() => _TekioFormState();
@@ -55,8 +56,11 @@ class _TekioFormState extends State<TekioForm> {
       bottomNavigationBar: SizedBox(
         width: double.infinity,
         child: FilledButton(
-          onPressed: () {},
-          child: Text('DAS BUTTON'),
+          onPressed: () {
+            _formKey.currentState?.saveAndValidate();
+            widget.onSubmit(_formKey.currentState?.value);
+          },
+          child: Text('Submit'),
         ),
       ),
     );
