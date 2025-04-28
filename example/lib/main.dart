@@ -17,13 +17,21 @@ class FormExample extends StatefulWidget {
 }
 
 class _FormExampleState extends State<FormExample> {
+  final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.green);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: colorScheme,
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        listTileTheme: ListTileThemeData(
+          tileColor: colorScheme.tertiary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
         ),
       ),
       home: FutureBuilder<String>(

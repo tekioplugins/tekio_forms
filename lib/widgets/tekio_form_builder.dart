@@ -37,10 +37,13 @@ class TekioForm extends StatelessWidget {
       body: FormBuilder(
           key: _formKey,
           child: ListView.builder(
-            padding: EdgeInsets.all(10.0),
-            itemBuilder: (context, index) => TekioSection(
-              formSectionData: formData.formSections[index],
-              context: context,
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: TekioSection(
+                formSectionData: formData.formSections[index],
+                context: context,
+              ),
             ),
             itemCount: formData.formSections.length,
           )),

@@ -10,20 +10,22 @@ class TekioSection extends Column {
           key: Key(formSectionData.sectionKey),
           spacing: 10.0,
           children: List.from([
-            if (formSectionData.sectionTitle != null &&
-                formSectionData.sectionTitle!.isNotEmpty)
-              Text(
-                formSectionData.sectionTitle ?? '',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            if (formSectionData.sectionSubtitle != null &&
-                formSectionData.sectionSubtitle!.isNotEmpty)
-              Text(
-                formSectionData.sectionSubtitle ?? '',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
+            ListTile(
+              title: (formSectionData.sectionTitle != null &&
+                      formSectionData.sectionTitle!.isNotEmpty)
+                  ? Text(
+                      formSectionData.sectionTitle ?? '',
+                      textAlign: TextAlign.center,
+                    )
+                  : null,
+              subtitle: (formSectionData.sectionSubtitle != null &&
+                      formSectionData.sectionSubtitle!.isNotEmpty)
+                  ? Text(
+                      formSectionData.sectionSubtitle ?? '',
+                      textAlign: TextAlign.center,
+                    )
+                  : null,
+            ),
           ])
             ..addAll(
               formSectionData.formFields?.map((e) {
