@@ -47,8 +47,9 @@ class TekioForm extends StatelessWidget {
             ),
             itemCount: formData.formSections.length,
           )),
-      bottomNavigationBar: SizedBox(
+      bottomNavigationBar: Container(
         width: double.infinity,
+        padding: EdgeInsets.all(8.0),
         child: FilledButton(
           onPressed: () {
             _formKey.currentState?.saveAndValidate();
