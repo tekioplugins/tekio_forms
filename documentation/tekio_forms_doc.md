@@ -17,7 +17,7 @@ Welcome to the Tekio Forms Documentation.
 This is a simple example for rapid testing.
 
     {
-       "formTile":"Super Awsome Form",
+       "formTile":"Super Awesome Form",
        "formSubTitle":"Subtitle",
        "formKey":"my-form-key",
        "formSections":[

@@ -1,6 +1,6 @@
 # Form Section!
 
-Widget that will render a Tittle,subtitle & a list of fields
+Widget that will render a title, subtitle & a list of fields
 
 ## Fields
 

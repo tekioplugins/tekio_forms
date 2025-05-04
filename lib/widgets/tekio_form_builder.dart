@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:tekio_forms/models/models.dart';
+import 'package:tekio_forms/models/tekio_form_decoration.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
 class TekioForm extends StatelessWidget {
-  TekioForm({super.key, required this.formData, required this.onSubmit});
+  TekioForm({
+    super.key,
+    required this.formData,
+    required this.formDecoration,
+    required this.onSubmit,
+    this.initialValue,
+  });
+
   final TekioFormData formData;
+  final TekioFormDecoration formDecoration;
   final Function(Map<String, dynamic>?) onSubmit;
+  final Map<String, dynamic>? initialValue;
 
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
@@ -36,12 +46,14 @@ class TekioForm extends StatelessWidget {
       ),
       body: FormBuilder(
           key: _formKey,
+          initialValue: initialValue ?? {},
           child: ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            padding: formDecoration.formPadding,
             itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.only(bottom: 12.0),
+              padding: formDecoration.sectionPadding,
               child: TekioSection(
                 formSectionData: formData.formSections[index],
+                formSpacing: formDecoration.formsSpacing,
                 context: context,
               ),
             ),
@@ -49,7 +61,7 @@ class TekioForm extends StatelessWidget {
           )),
       bottomNavigationBar: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(8.0),
+        padding: formDecoration.buttonPadding,
         child: FilledButton(
           onPressed: () {
             _formKey.currentState?.saveAndValidate();

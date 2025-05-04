@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
+import 'package:tekio_forms/models/tekio_form_decoration.dart';
 import 'package:tekio_forms/widgets/tekio_form_builder.dart';
 
 Future<void> main() async {
@@ -33,6 +34,11 @@ class _FormExampleState extends State<FormExample> {
             borderRadius: BorderRadius.circular(12.0),
           ),
         ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: ButtonStyle(
+            padding: WidgetStatePropertyAll(EdgeInsets.all(20)),
+          ),
+        ),
       ),
       home: FutureBuilder<String>(
         future: rootBundle.loadString('lib/example.json'),
@@ -46,7 +52,19 @@ class _FormExampleState extends State<FormExample> {
           }
           return TekioForm(
             formData: TekioFormData.fromJson(jsonDecode(snapshot.data!)),
+            formDecoration: TekioFormDecoration(
+              formPadding: EdgeInsets.symmetric(horizontal: 12.0),
+              sectionPadding: const EdgeInsets.only(bottom: 12.0),
+              formsSpacing: 10.0,
+              buttonPadding: EdgeInsets.all(20.0),
+            ),
             onSubmit: (p0) => print(p0),
+            initialValue: {
+              "FIELD01": "Test",
+              "FIELD9": "Test",
+              "FIELD10": "Test",
+              "FIELD11": "Test",
+            },
           );
         },
       ),

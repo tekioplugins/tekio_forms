@@ -41,10 +41,10 @@ Json format to show those fields
             "maxLines": 5,
             "regexValidation": "your_regex_here",
             "options": [
-            {
-                "order": 0,
-                "optionKey": "opt-1",
-                "optionName": "option 1"
-            }
+                {
+                    "order": 0,
+                    "optionKey": "opt-1",
+                    "optionName": "option 1"
+                }
             ]
     }

@@ -3,12 +3,13 @@ import 'package:tekio_forms/models/models.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
 class TekioSection extends Column {
-  TekioSection({
-    required TekioFormSection formSectionData,
-    required BuildContext context,
-  }) : super(
+  TekioSection(
+      {required TekioFormSection formSectionData,
+      required BuildContext context,
+      required double formSpacing})
+      : super(
           key: Key(formSectionData.sectionKey),
-          spacing: 10.0,
+          spacing: formSpacing,
           children: List.from(
             formSectionData.formFields?.map((e) {
                   switch (e.fieldType) {
