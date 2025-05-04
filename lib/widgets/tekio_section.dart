@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/models.dart';
-import 'package:tekio_forms/widgets/tekio_form.dart';
+import 'package:tekio_forms/utils/tekio_form_utils.dart';
 
 class TekioSection extends Column {
   TekioSection(
@@ -11,16 +11,9 @@ class TekioSection extends Column {
           key: Key(formSectionData.sectionKey),
           spacing: formSpacing,
           children: List.from(
-            formSectionData.formFields?.map((e) {
-                  switch (e.fieldType) {
-                    case TekioFieldType.textField:
-                      return TekioTextField(
-                        formFieldsData: e,
-                      );
-                    default:
-                      return SizedBox();
-                  }
-                }).toList() ??
+            formSectionData.formFields
+                    ?.map((e) => TekioFormUtils.buildFormType(e))
+                    .toList() ??
                 [],
           )..insertAll(
               0,
