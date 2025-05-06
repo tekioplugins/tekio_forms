@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
-import 'package:tekio_forms/models/tekio_form_decoration.dart';
-import 'package:tekio_forms/widgets/tekio_form_builder.dart';
+import 'package:tekio_forms/utils/tekio_form_decoration.dart';
+import 'package:tekio_forms/widgets/tekio_form.dart';
 
 Future<void> main() async {
   runApp(FormExample());
@@ -19,6 +19,8 @@ class FormExample extends StatefulWidget {
 
 class _FormExampleState extends State<FormExample> {
   final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.green);
+
+  final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
   @override
   Widget build(BuildContext context) {
@@ -43,29 +45,43 @@ class _FormExampleState extends State<FormExample> {
       home: FutureBuilder<String>(
         future: rootBundle.loadString('lib/example.json'),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData) {
-            return const Center(child: Text('No data found'));
+          if (snapshot.hasData) {
+            final TekioFormData tekioFormData = TekioFormData.fromJson(
+              jsonDecode(snapshot.data!),
+            );
+            return Scaffold(
+              appBar: AppBar(
+                title: TekioFormTitle(formData: tekioFormData),
+                centerTitle: true,
+              ),
+              body: TekioForm(
+                key: _formKey,
+                formData: tekioFormData,
+                formDecoration: TekioFormDecoration(
+                  formPadding: EdgeInsets.symmetric(horizontal: 12.0),
+                  sectionPadding: const EdgeInsets.only(bottom: 12.0),
+                  formsSpacing: 10.0,
+                ),
+                initialValue: {
+                  "FIELD01": "Test",
+                  "FIELD9": "Test",
+                  "FIELD10": "Test",
+                  "FIELD11": "Test",
+                },
+              ),
+              bottomNavigationBar: Container(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: () {
+                    _formKey.currentState?.saveAndValidate();
+                    print(_formKey.currentState?.value);
+                  },
+                  child: Text('Submit'),
+                ),
+              ),
+            );
           }
-          return TekioForm(
-            formData: TekioFormData.fromJson(jsonDecode(snapshot.data!)),
-            formDecoration: TekioFormDecoration(
-              formPadding: EdgeInsets.symmetric(horizontal: 12.0),
-              sectionPadding: const EdgeInsets.only(bottom: 12.0),
-              formsSpacing: 10.0,
-              buttonPadding: EdgeInsets.all(20.0),
-            ),
-            onSubmit: (p0) => print(p0),
-            initialValue: {
-              "FIELD01": "Test",
-              "FIELD9": "Test",
-              "FIELD10": "Test",
-              "FIELD11": "Test",
-            },
-          );
+          return CircularProgressIndicator();
         },
       ),
     );
