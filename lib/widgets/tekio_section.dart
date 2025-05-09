@@ -20,24 +20,16 @@ class TekioSection extends Column {
               (formSectionData.sectionTitle != null ||
                       formSectionData.sectionSubtitle != null)
                   ? [
+                      //TODO: ListTile might not be the best thing to use in this case, because the user might want to use it in another part of the app and the appTheme will break.
                       ListTile(
-                        title: (formSectionData.sectionTitle != null)
-                            ? Text(
-                                formSectionData.sectionTitle ?? '',
-                                textAlign: TextAlign.center,
-                              )
-                            : Text(
-                                formSectionData.sectionSubtitle ?? '',
-                                textAlign: TextAlign.center,
-                              ),
-                        subtitle: (formSectionData.sectionSubtitle != null)
-                            ? !(formSectionData.sectionTitle == null)
-                                ? Text(
-                                    formSectionData.sectionSubtitle ?? '',
-                                    textAlign: TextAlign.center,
-                                  )
-                                : null
-                            : null,
+                        title: Text(
+                          formSectionData.sectionTitle ?? '',
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: Text(
+                          formSectionData.sectionSubtitle ?? '',
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ]
                   : [],

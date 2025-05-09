@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:tekio_forms/models/tekio_form_data.dart';
 
-class TekioFormTitle extends Column {
+//TODO: Find better solution for this.
+class TekioFormTitle extends Builder {
+  final String? title;
+  final String? subtitle;
   TekioFormTitle({
     super.key,
-    required TekioFormData formData,
+    this.title,
+    this.subtitle,
   }) : super(
-          children: [
-            if (formData.formTile != null && formData.formTile!.isNotEmpty)
-              Builder(builder: (context) {
-                return Text(
-                  formData.formTile ?? '',
+          builder: (context) => Column(
+            children: [
+              if (title != null && title.isNotEmpty)
+                Text(
+                  title,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleLarge,
-                );
-              }),
-            if (formData.formSubTitle != null &&
-                formData.formSubTitle!.isNotEmpty)
-              Builder(builder: (context) {
-                return Text(
-                  formData.formSubTitle ?? '',
+                ),
+              if (subtitle != null && subtitle.isNotEmpty)
+                Text(
+                  subtitle,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleMedium,
-                );
-              }),
-          ],
+                ),
+            ],
+          ),
         );
 }

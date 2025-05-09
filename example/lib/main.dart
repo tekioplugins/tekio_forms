@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
-Future<void> main() async {
+void main() {
   runApp(FormExample());
 }
 
@@ -18,7 +18,7 @@ class FormExample extends StatefulWidget {
 }
 
 class _FormExampleState extends State<FormExample> {
-  final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.green);
+  final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.blue);
 
   bool isEdit = true;
 
@@ -33,13 +33,9 @@ class _FormExampleState extends State<FormExample> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),
         listTileTheme: ListTileThemeData(
+          tileColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
-          ),
-        ),
-        filledButtonTheme: FilledButtonThemeData(
-          style: ButtonStyle(
-            padding: WidgetStatePropertyAll(EdgeInsets.all(20)),
           ),
         ),
       ),
@@ -52,7 +48,10 @@ class _FormExampleState extends State<FormExample> {
             );
             return Scaffold(
               appBar: AppBar(
-                title: TekioFormTitle(formData: tekioFormData),
+                title: TekioFormTitle(
+                  title: tekioFormData.formTile,
+                  subtitle: tekioFormData.formSubTitle,
+                ),
                 centerTitle: true,
                 actions: [
                   isEdit
