@@ -11,3 +11,8 @@ node covBadgeGen.js
 ## Models Build Command
 
 dart run build_runner build --delete-conflicting-outputs
+
+
+## TODO
+
+Improve doc as we go
