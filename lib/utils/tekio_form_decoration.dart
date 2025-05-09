@@ -10,9 +10,9 @@ class TekioFormDecoration {
   /// Spacing between the form fields
   final double formsSpacing;
 
-  TekioFormDecoration({
-    required this.formPadding,
-    required this.sectionPadding,
-    required this.formsSpacing,
+  const TekioFormDecoration({
+    this.formPadding = const EdgeInsets.symmetric(horizontal: 12.0),
+    this.sectionPadding = const EdgeInsets.only(bottom: 12.0),
+    this.formsSpacing = 10.0,
   });
 }

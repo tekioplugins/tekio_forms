@@ -1,9 +1,9 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
-import 'package:tekio_forms/utils/tekio_form_decoration.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
 Future<void> main() async {
@@ -20,6 +20,8 @@ class FormExample extends StatefulWidget {
 class _FormExampleState extends State<FormExample> {
   final ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: Colors.green);
 
+  bool isEdit = true;
+
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
   @override
@@ -31,7 +33,6 @@ class _FormExampleState extends State<FormExample> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),
         listTileTheme: ListTileThemeData(
-          tileColor: colorScheme.tertiary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
@@ -53,31 +54,43 @@ class _FormExampleState extends State<FormExample> {
               appBar: AppBar(
                 title: TekioFormTitle(formData: tekioFormData),
                 centerTitle: true,
+                actions: [
+                  isEdit
+                      ? IconButton(
+                        onPressed: () {
+                          _formKey.currentState?.saveAndValidate();
+                          if (kDebugMode) {
+                            print(_formKey.currentState?.value);
+                          }
+                          setState(() {
+                            isEdit = false;
+                          });
+                        },
+                        icon: Icon(Icons.save),
+                      )
+                      : IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isEdit = true;
+                          });
+                        },
+                        icon: Icon(Icons.edit),
+                      ),
+                ],
               ),
               body: TekioForm(
                 key: _formKey,
                 formData: tekioFormData,
-                formDecoration: TekioFormDecoration(
-                  formPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                  sectionPadding: const EdgeInsets.only(bottom: 12.0),
-                  formsSpacing: 10.0,
-                ),
+                enabled: isEdit,
                 initialValue: {
-                  "FIELD01": "Test",
-                  "FIELD9": "Test",
-                  "FIELD10": "Test",
-                  "FIELD11": "Test",
+                  "field_key_01": "field_01_data",
+                  "field_key_02": "field_02_data",
+                  "field_key_3": "field_3_data",
+                  "field_key_4": "field_4_data",
+                  "field_key_6": "field_6_data",
+                  "field_key_7": "field_7_data",
+                  "field_key_9": "field_9_data",
                 },
-              ),
-              bottomNavigationBar: Container(
-                width: double.infinity,
-                child: FilledButton(
-                  onPressed: () {
-                    _formKey.currentState?.saveAndValidate();
-                    print(_formKey.currentState?.value);
-                  },
-                  child: Text('Submit'),
-                ),
               ),
             );
           }
