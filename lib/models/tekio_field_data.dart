@@ -22,7 +22,7 @@ class TekioFieldData {
   @JsonKey(name: 'fieldHint')
   String? fieldHint;
   @JsonKey(name: 'maxLines')
-  int? maxLines;
+  int maxLines;
   @JsonKey(name: 'minLength')
   int? minLength;
   @JsonKey(name: 'maxLength')
@@ -33,6 +33,8 @@ class TekioFieldData {
   int? maxValue;
   @JsonKey(name: 'isMandatory')
   bool? isMandatory;
+  @JsonKey(name: 'enabled')
+  bool enabled;
   @JsonKey(name: 'regexValidation')
   String? regexValidation;
   TekioFieldData({
@@ -41,7 +43,7 @@ class TekioFieldData {
     required this.fieldType,
     this.fieldLabel,
     this.fieldHint,
-    this.maxLines,
+    this.maxLines = 1,
     this.minLength,
     this.maxLength,
     this.isMandatory,
@@ -49,9 +51,11 @@ class TekioFieldData {
     this.regexValidation,
     this.maxValue,
     this.minValue,
+    this.enabled = true,
   });
 
-  factory TekioFieldData.fromJson(Map<String, dynamic> json) => _$TekioFieldDataFromJson(json);
+  factory TekioFieldData.fromJson(Map<String, dynamic> json) =>
+      _$TekioFieldDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$TekioFieldDataToJson(this);
 }

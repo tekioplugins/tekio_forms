@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:example/example_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,12 +40,22 @@ class _FormExampleState extends State<FormExample> {
           ),
         ),
       ),
-      home: FutureBuilder<String>(
-        future: rootBundle.loadString('lib/example.json'),
+      home: FutureBuilder<ExampleData>(
+        future: Future(
+          () async => ExampleData(
+            exampleForm: await rootBundle.loadString('lib/exampleForm.json'),
+            exampleInitial: await rootBundle.loadString(
+              'lib/exampleInitial.json',
+            ),
+          ),
+        ),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            final TekioFormData tekioFormData = TekioFormData.fromJson(
-              jsonDecode(snapshot.data!),
+            TekioFormData tekioFormData = TekioFormData.fromJson(
+              jsonDecode(snapshot.data!.exampleForm),
+            );
+            Map<String, dynamic> initialValue = jsonDecode(
+              snapshot.data!.exampleInitial,
             );
             return Scaffold(
               appBar: AppBar(
@@ -81,15 +92,7 @@ class _FormExampleState extends State<FormExample> {
                 key: _formKey,
                 formData: tekioFormData,
                 enabled: isEdit,
-                initialValue: {
-                  "field_key_01": "field_01_data",
-                  "field_key_02": "field_02_data",
-                  "field_key_3": "field_3_data",
-                  "field_key_4": "field_4_data",
-                  "field_key_6": "field_6_data",
-                  "field_key_7": "field_7_data",
-                  "field_key_9": "field_9_data",
-                },
+                initialValue: initialValue,
               ),
             );
           }
