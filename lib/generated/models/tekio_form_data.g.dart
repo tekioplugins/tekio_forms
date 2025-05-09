@@ -6,7 +6,8 @@ part of '../../models/tekio_form_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TekioFormData _$TekioFormDataFromJson(Map<String, dynamic> json) => TekioFormData(
+TekioFormData _$TekioFormDataFromJson(Map<String, dynamic> json) =>
+    TekioFormData(
       formTile: json['formTile'] as String?,
       formSubTitle: json['formSubTitle'] as String?,
       formKey: json['formKey'] as String,
@@ -15,7 +16,8 @@ TekioFormData _$TekioFormDataFromJson(Map<String, dynamic> json) => TekioFormDat
           .toList(),
     );
 
-Map<String, dynamic> _$TekioFormDataToJson(TekioFormData instance) => <String, dynamic>{
+Map<String, dynamic> _$TekioFormDataToJson(TekioFormData instance) =>
+    <String, dynamic>{
       'formKey': instance.formKey,
       'formTile': instance.formTile,
       'formSubTitle': instance.formSubTitle,

@@ -1,3 +1,4 @@
+
 # Tekio Forms Documentation!
 
 Welcome to the Tekio Forms Documentation.
@@ -17,39 +18,49 @@ Welcome to the Tekio Forms Documentation.
 This is a simple example for rapid testing.
 
     {
-       "formTile":"Super Awsome Form",
-       "formSubTitle":"Subtitle",
-       "formKey":"my-form-key",
+       "formTile":"form_title",
+       "formSubTitle":"form_subtitle",
+       "formKey":"form_key",
        "formSections":[
           {
-             "order":0,
-             "sectionKey":"first-section",
-             "sectionTitle":"Section 1",
-             "sectionSubtitle":"Fill section 1",
+             "order":1,
+             "sectionKey":"section_key_1",
+             "sectionTitle":"section_title_1",
+             "sectionSubtitle":"section_subtitle_1",
              "formFields":[
                 {
                    "order":0,
-                   "groupingKey":"name-group",
-                   "fieldKey":"field-1",
-                   "fieldName":"Name",
-                   "fieldHint":"Name",
-                   "fieldType":"text",
-                   "isMandatory":false,
-                   "minLength":0,
-                   "maxLength":13,
-                   "minValue":18,
-                   "maxValue":99,
-                   "maxLines":5,
-                   "regexValidation":"your_regex_here",
-                   "options":[
-                      {
-                         "order":0,
-                         "optionKey":"opt-1",
-                         "optionName":"option 1"
-                      }
-                   ]
+                   "fieldKey":"field_key_7",
+                   "fieldLabel":"field_label_7",
+                   "fieldType":"textField"
+                },
+                {
+                   "order":1,
+                   "fieldKey":"field_key_8",
+                   "fieldLabel":"field_label_8",
+                   "fieldType":"textField"
+                }
+             ]
+          },
+          {
+             "order":2,
+             "sectionKey":"section_key_2",
+             "sectionTitle":"section_title_2",
+             "sectionSubtitle":"section_subtitle_2",
+             "formFields":[
+                {
+                   "order":0,
+                   "fieldKey":"field_key_9",
+                   "fieldLabel":"field_label_9",
+                   "fieldType":"textField"
                 }
              ]
           }
        ]
     }
+
+Here you have a more complex example:
+
+	(Coming soon)
+
+  
