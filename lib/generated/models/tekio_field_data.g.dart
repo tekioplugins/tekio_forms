@@ -17,7 +17,7 @@ TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) =>
       maxLines: (json['maxLines'] as num?)?.toInt() ?? 1,
       minLength: (json['minLength'] as num?)?.toInt(),
       maxLength: (json['maxLength'] as num?)?.toInt(),
-      isMandatory: json['isMandatory'] as bool?,
+      isMandatory: json['isMandatory'] as bool? ?? false,
       order: (json['order'] as num?)?.toInt(),
       regexValidation: json['regexValidation'] as String?,
       maxValue: (json['maxValue'] as num?)?.toInt(),

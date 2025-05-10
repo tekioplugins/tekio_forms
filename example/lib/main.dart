@@ -68,13 +68,16 @@ class _FormExampleState extends State<FormExample> {
                   isEdit
                       ? IconButton(
                         onPressed: () {
-                          _formKey.currentState?.saveAndValidate();
-                          if (kDebugMode) {
-                            print(_formKey.currentState?.value);
+                          _formKey.currentState?.validate();
+                          if (_formKey.currentState?.isValid ?? false) {
+                            _formKey.currentState?.save();
+                            if (kDebugMode) {
+                              print(_formKey.currentState?.value);
+                            }
+                            setState(() {
+                              isEdit = false;
+                            });
                           }
-                          setState(() {
-                            isEdit = false;
-                          });
                         },
                         icon: Icon(Icons.save),
                       )

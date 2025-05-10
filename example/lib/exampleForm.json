@@ -21,11 +21,12 @@
                "order": 1,
                "fieldKey": "text_key_1",
                "fieldLabel": "Multi Line Text Label",
-               "fieldHint": "Text Hint",
+               "fieldHint": "Use a website URL",
                "fieldType": "textField",
                "minLength": 10,
                "maxLines": 5,
-               "isMandatory": true
+               "isMandatory": true,
+               "regexValidation": "^(?:(https?|s?ftp):\/\/)?(?:([\\w-]+)\\.)?([\\w-]+)\\.([\\w]+)\/?(?:([^?#$]+))?(?:\\?([^#$]+))?(?:#(.*))?$"
             }
          ]
       },

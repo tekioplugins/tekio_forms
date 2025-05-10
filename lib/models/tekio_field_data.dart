@@ -32,7 +32,7 @@ class TekioFieldData {
   @JsonKey(name: 'maxValue')
   int? maxValue;
   @JsonKey(name: 'isMandatory')
-  bool? isMandatory;
+  bool isMandatory;
   @JsonKey(name: 'enabled')
   bool enabled;
   @JsonKey(name: 'regexValidation')
@@ -46,7 +46,7 @@ class TekioFieldData {
     this.maxLines = 1,
     this.minLength,
     this.maxLength,
-    this.isMandatory,
+    this.isMandatory = false,
     this.order,
     this.regexValidation,
     this.maxValue,
