@@ -13,7 +13,7 @@ You can edit the following fields:
 
 - **fieldHint** - Hint displayed on the field before input.
 
-- **fieldLabel** - Field label (normaly a descriptionof the field).
+- **fieldLabel** - Field label (normally a description of the field).
 
 - **fieldType** **(required)**- This field needs to be **"textField"**.
 
@@ -26,6 +26,8 @@ You can edit the following fields:
 - **enabled** - If the field can be edited (true/false).
 
 - **maxLines** - Max lined to be displayed a one time on the field.
+
+- **regexValidation** - Regex for specific field validation (Attention: The regex needs to work on json).
 
 ## Json Format
 
@@ -42,4 +44,5 @@ Json format to show those fields
 	    "maxLength":250,
 	    "enabled": true,
 	    "maxLines":2,
+		"regexValidation": "//Add regex here "
     }
