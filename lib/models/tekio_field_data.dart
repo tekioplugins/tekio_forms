@@ -15,7 +15,7 @@ class TekioFieldData {
   String? groupingKey;
   @JsonKey(name: 'fieldKey')
   String fieldKey;
-  @JsonKey(name: 'fieldType')
+  @JsonKey(name: 'fieldType', defaultValue: TekioFieldType.unknown, unknownEnumValue: TekioFieldType.unknown)
   TekioFieldType? fieldType;
   @JsonKey(name: 'fieldLabel')
   String? fieldLabel;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/models.dart';
 import 'package:tekio_forms/utils/tekio_form_decoration.dart';
-import 'package:tekio_forms/utils/tekio_form_utils.dart';
 
 class TekioSection extends Column {
   TekioSection({
@@ -12,7 +11,7 @@ class TekioSection extends Column {
           key: Key(formSectionData.sectionKey),
           // spacing: formSpacing,
           children: List.from(
-            formSectionData.formFields?.map((e) => TekioFormUtils.buildFormType(e)).toList() ?? [],
+            formSectionData.formFields?.map((e) => e.fieldType?.buildField(e)).toList() ?? [],
           )..insertAll(
               0,
               (formSectionData.sectionTitle != null || formSectionData.sectionSubtitle != null)

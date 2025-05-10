@@ -7,8 +7,8 @@ import 'package:tekio_forms/models/tekio_form_data.dart';
 Future<void> main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  final String jsonString = await rootBundle.loadString(
-      'test/test_json_data/test_form_build_data/json_form_data_01.json');
+  final String jsonString =
+      await rootBundle.loadString('test/test_json_data/test_form_build_data/json_form_data_01.json');
 
   final TekioFormData formData = TekioFormData.fromJson(jsonDecode(jsonString));
 
