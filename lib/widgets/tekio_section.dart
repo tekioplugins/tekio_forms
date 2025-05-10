@@ -1,34 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/models.dart';
+import 'package:tekio_forms/utils/tekio_form_decoration.dart';
 import 'package:tekio_forms/utils/tekio_form_utils.dart';
 
 class TekioSection extends Column {
-  TekioSection(
-      {required TekioFormSection formSectionData,
-      required BuildContext context,
-      required double formSpacing})
-      : super(
+  TekioSection({
+    required TekioFormSection formSectionData,
+    required BuildContext context,
+    required TekioFormDecoration formDecoration,
+  }) : super(
           key: Key(formSectionData.sectionKey),
-          spacing: formSpacing,
+          // spacing: formSpacing,
           children: List.from(
-            formSectionData.formFields
-                    ?.map((e) => TekioFormUtils.buildFormType(e))
-                    .toList() ??
-                [],
+            formSectionData.formFields?.map((e) => TekioFormUtils.buildFormType(e)).toList() ?? [],
           )..insertAll(
               0,
-              (formSectionData.sectionTitle != null ||
-                      formSectionData.sectionSubtitle != null)
+              (formSectionData.sectionTitle != null || formSectionData.sectionSubtitle != null)
                   ? [
                       //TODO: ListTile might not be the best thing to use in this case, because the user might want to use it in another part of the app and the appTheme will break.
                       ListTile(
                         title: Text(
                           formSectionData.sectionTitle ?? '',
-                          textAlign: TextAlign.center,
+                          textAlign: formDecoration.tekioAlignment.textAlign,
                         ),
                         subtitle: Text(
                           formSectionData.sectionSubtitle ?? '',
-                          textAlign: TextAlign.center,
+                          textAlign: formDecoration.tekioAlignment.textAlign,
                         ),
                       ),
                     ]
