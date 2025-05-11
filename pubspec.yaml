@@ -26,6 +26,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-      - test/test_json_data/test_form_build_data/json_form_data_01.json
-      - test/test_json_data/test_initial_values/json_initial_data_01.json
+      - test/test_util_data/test_form_json/json_form_data_01.json
+      - test/test_util_data/test_initial_json/json_initial_data_01.json
 
