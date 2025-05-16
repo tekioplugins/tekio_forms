@@ -9,7 +9,7 @@ class TekioSection extends Column {
     required TekioFormDecoration formDecoration,
   }) : super(
           key: Key(formSectionData.sectionKey),
-          // spacing: formSpacing,
+          spacing: formSpacing,
           children: List.from(
             formSectionData.formFields?.map((e) => e.fieldType?.buildField(e)).toList() ?? [],
           )..insertAll(
