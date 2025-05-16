@@ -1,0 +1,56 @@
+name: Tekio Forms Plugin Flutter CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  analyze_and_test:
+    runs-on: macos-latest  # macOS is required for full plugin testing (especially iOS)
+
+    strategy:
+      matrix:
+        flutter_channel: [stable]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ matrix.flutter_channel }}
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze plugin code
+        run: flutter analyze .
+
+      - name: Run unit tests for main plugin
+        run: flutter test
+
+      - name: Setup example project
+        working-directory: example
+        run: flutter pub get
+
+      - name: Analyze example code
+        working-directory: example
+        run: flutter analyze .
+
+      - name: Run example tests
+        working-directory: example
+        run: flutter test
+
+      # Optional: Ensure plugin can build for Android
+      - name: Build Android example app
+        working-directory: example
+        run: flutter build apk
+
+      # Optional: Ensure plugin can build for iOS
+      - name: Build iOS example app
+        working-directory: example
+        run: flutter build ios --no-codesign
