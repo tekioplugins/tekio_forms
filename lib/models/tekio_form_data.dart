@@ -20,11 +20,9 @@ class TekioFormData {
     this.formSubTitle,
     required this.formKey,
     required List<TekioFormSection> formSections,
-  }) : formSections = formSections
-            .sorted((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
+  }) : formSections = formSections.sorted((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
 
-  factory TekioFormData.fromJson(Map<String, dynamic> json) =>
-      _$TekioFormDataFromJson(json);
+  factory TekioFormData.fromJson(Map<String, dynamic> json) => _$TekioFormDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$TekioFormDataToJson(this);
 }

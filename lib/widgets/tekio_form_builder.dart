@@ -31,7 +31,7 @@ class TekioForm extends FormBuilder {
               padding: formDecoration.sectionPadding,
               child: TekioSection(
                 formSectionData: formData.formSections[index],
-                formSpacing: formDecoration.formsSpacing,
+                formDecoration: formDecoration,
                 context: context,
               ),
             ),

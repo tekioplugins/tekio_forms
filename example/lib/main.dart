@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
+import 'package:tekio_forms/utils/tekio_form_decoration.dart';
 import 'package:tekio_forms/widgets/tekio_form.dart';
 
 void main() {
@@ -94,6 +95,9 @@ class _FormExampleState extends State<FormExample> {
               body: TekioForm(
                 key: _formKey,
                 formData: tekioFormData,
+                formDecoration: TekioFormDecoration(
+                  tekioAlignment: TekioAlignment.center,
+                ),
                 enabled: isEdit,
                 initialValue: initialValue,
               ),

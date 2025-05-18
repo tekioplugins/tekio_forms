@@ -6,8 +6,7 @@ part of '../../models/tekio_form_section.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TekioFormSection _$TekioFormSectionFromJson(Map<String, dynamic> json) =>
-    TekioFormSection(
+TekioFormSection _$TekioFormSectionFromJson(Map<String, dynamic> json) => TekioFormSection(
       order: (json['order'] as num?)?.toInt(),
       sectionTitle: json['sectionTitle'] as String?,
       sectionSubtitle: json['sectionSubtitle'] as String?,
@@ -17,8 +16,7 @@ TekioFormSection _$TekioFormSectionFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$TekioFormSectionToJson(TekioFormSection instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$TekioFormSectionToJson(TekioFormSection instance) => <String, dynamic>{
       'sectionKey': instance.sectionKey,
       'sectionTitle': instance.sectionTitle,
       'sectionSubtitle': instance.sectionSubtitle,

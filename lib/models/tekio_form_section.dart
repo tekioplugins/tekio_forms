@@ -23,11 +23,9 @@ class TekioFormSection {
     this.sectionSubtitle,
     required this.sectionKey,
     List<TekioFieldData>? formFields,
-  }) : formFields = formFields
-            ?.sorted((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
+  }) : formFields = formFields?.sorted((a, b) => (a.order ?? 0).compareTo((b.order ?? 0)));
 
-  factory TekioFormSection.fromJson(Map<String, dynamic> json) =>
-      _$TekioFormSectionFromJson(json);
+  factory TekioFormSection.fromJson(Map<String, dynamic> json) => _$TekioFormSectionFromJson(json);
 
   Map<String, dynamic> toJson() => _$TekioFormSectionToJson(this);
 }
