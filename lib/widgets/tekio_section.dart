@@ -9,12 +9,16 @@ class TekioSection extends Column {
     required TekioFormDecoration formDecoration,
   }) : super(
           key: Key(formSectionData.sectionKey),
-          spacing: formSpacing,
+          spacing: formDecoration.formsSpacing,
           children: List.from(
-            formSectionData.formFields?.map((e) => e.fieldType?.buildField(e)).toList() ?? [],
+            formSectionData.formFields
+                    ?.map((e) => e.fieldType?.buildField(e))
+                    .toList() ??
+                [],
           )..insertAll(
               0,
-              (formSectionData.sectionTitle != null || formSectionData.sectionSubtitle != null)
+              (formSectionData.sectionTitle != null ||
+                      formSectionData.sectionSubtitle != null)
                   ? [
                       //TODO: ListTile might not be the best thing to use in this case, because the user might want to use it in another part of the app and the appTheme will break.
                       ListTile(
