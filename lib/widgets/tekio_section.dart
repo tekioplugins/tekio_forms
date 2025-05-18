@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tekio_forms/models/models.dart';
-import 'package:tekio_forms/utils/tekio_form_utils.dart';
+import 'package:tekio_forms/utils/tekio_form_decoration.dart';
 
 class TekioSection extends Column {
-  TekioSection(
-      {required TekioFormSection formSectionData,
-      required BuildContext context,
-      required double formSpacing})
-      : super(
+  TekioSection({
+    required TekioFormSection formSectionData,
+    required BuildContext context,
+    required TekioFormDecoration formDecoration,
+  }) : super(
           key: Key(formSectionData.sectionKey),
-          spacing: formSpacing,
+          spacing: formDecoration.formsSpacing,
           children: List.from(
             formSectionData.formFields
-                    ?.map((e) => TekioFormUtils.buildFormType(e))
+                    ?.map((e) => e.fieldType?.buildField(e))
                     .toList() ??
                 [],
           )..insertAll(
@@ -24,11 +24,11 @@ class TekioSection extends Column {
                       ListTile(
                         title: Text(
                           formSectionData.sectionTitle ?? '',
-                          textAlign: TextAlign.center,
+                          textAlign: formDecoration.tekioAlignment.textAlign,
                         ),
                         subtitle: Text(
                           formSectionData.sectionSubtitle ?? '',
-                          textAlign: TextAlign.center,
+                          textAlign: formDecoration.tekioAlignment.textAlign,
                         ),
                       ),
                     ]
