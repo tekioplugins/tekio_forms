@@ -44,5 +44,6 @@ Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String,
 
 const _$TekioFieldTypeEnumMap = {
   TekioFieldType.textField: 'textField',
+  TekioFieldType.numericField: 'numericField',
   TekioFieldType.unknown: 'unknown',
 };

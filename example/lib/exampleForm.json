@@ -27,6 +27,19 @@
                "maxLines": 5,
                "isMandatory": true,
                "regexValidation": "^(?:(https?|s?ftp):\/\/)?(?:([\\w-]+)\\.)?([\\w-]+)\\.([\\w]+)\/?(?:([^?#$]+))?(?:\\?([^#$]+))?(?:#(.*))?$"
+            },
+            {
+               "order": 2,
+               "fieldKey": "numeric_field_1",
+               "fieldLabel": "Number field",
+               "fieldHint": "Write a number",
+               "fieldType": "numericField",
+               "minLength": 1,
+               "maxLines": 5,
+               "min": 15,
+               "max": 20,
+               "maxLength": 3,
+               "isMandatory": true
             }
          ]
       },

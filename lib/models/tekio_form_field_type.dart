@@ -6,6 +6,8 @@ import 'package:tekio_forms/utils/tekio_fields_builders.dart';
 enum TekioFieldType {
   @JsonValue("textField")
   textField(buildTextField),
+  @JsonValue("numericField")
+  numericField(buildNumericField),
   unknown(buildUnknown);
 
   final Widget Function(TekioFieldData) builder;

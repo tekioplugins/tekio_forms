@@ -54,8 +54,7 @@ class TekioFieldData {
     this.enabled = true,
   });
 
-  factory TekioFieldData.fromJson(Map<String, dynamic> json) =>
-      _$TekioFieldDataFromJson(json);
+  factory TekioFieldData.fromJson(Map<String, dynamic> json) => _$TekioFieldDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$TekioFieldDataToJson(this);
 }
