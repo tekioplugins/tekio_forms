@@ -1,7 +1,15 @@
 name: tekio_forms
-description: "A new Flutter package project."
+description: "This package allows you to build a complex forms with just a json file. This package is a part of the tekio plugins."
 version: 0.0.1
-homepage:
+homepage: https://github.com/tekioplugins/tekio_forms
+repository: https://github.com/tekioplugins/tekio_forms
+
+topics: 
+  - json
+  - widget
+  - dynamic
+  - forms
+  - validators
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
