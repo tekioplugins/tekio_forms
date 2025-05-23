@@ -1,6 +1,6 @@
 name: tekio_forms
 description: "This package allows you to build a complex forms with just a json file. This package is a part of the tekio plugins."
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/tekioplugins/tekio_forms
 repository: https://github.com/tekioplugins/tekio_forms
 
