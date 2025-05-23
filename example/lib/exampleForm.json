@@ -1,0 +1,68 @@
+{
+   "formTile": "TekioForm",
+   "formSubTitle": "Example form",
+   "formKey": "form_key",
+   "formSections": [
+      {
+         "order": 0,
+         "sectionKey": "text_form_key",
+         "sectionTitle": "Text Field",
+         "sectionSubtitle": "Text Field Example",
+         "formFields": [
+            {
+               "order": 0,
+               "fieldKey": "text_key_0",
+               "fieldLabel": "Text Label 0",
+               "fieldType": "textField",
+               "enabled": false,
+               "maxLength": 50
+            },
+            {
+               "order": 1,
+               "fieldKey": "text_key_1",
+               "fieldLabel": "Multi Line Text Label",
+               "fieldHint": "Use a website URL",
+               "fieldType": "textField",
+               "minLength": 10,
+               "maxLines": 5,
+               "isMandatory": true,
+               "regexValidation": "^(?:(https?|s?ftp):\/\/)?(?:([\\w-]+)\\.)?([\\w-]+)\\.([\\w]+)\/?(?:([^?#$]+))?(?:\\?([^#$]+))?(?:#(.*))?$"
+            }
+         ]
+      },
+      {
+         "order": 1,
+         "sectionKey": "section_key_1",
+         "sectionTitle": "section_title_1",
+         "sectionSubtitle": "section_subtitle_1",
+         "formFields": [
+            {
+               "order": 0,
+               "fieldKey": "field_key_7",
+               "fieldLabel": "field_label_7",
+               "fieldType": "textField"
+            },
+            {
+               "order": 1,
+               "fieldKey": "field_key_8",
+               "fieldLabel": "field_label_8",
+               "fieldType": "textField"
+            }
+         ]
+      },
+      {
+         "order": 2,
+         "sectionKey": "section_key_2",
+         "sectionTitle": "section_title_2",
+         "sectionSubtitle": "section_subtitle_2",
+         "formFields": [
+            {
+               "order": 0,
+               "fieldKey": "field_key_9",
+               "fieldLabel": "field_label_9",
+               "fieldType": "textField"
+            }
+         ]
+      }
+   ]
+}

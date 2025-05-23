@@ -1,8 +1,6 @@
-// This is just for testing to create documentation for the text field
-// Can be removed later or used to continue the development of the text field
-
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:tekio_forms/models/models.dart';
 
 class TekioTextField extends FormBuilderTextField {
@@ -15,8 +13,16 @@ class TekioTextField extends FormBuilderTextField {
             labelText: formFieldsData.fieldLabel,
             hintText: formFieldsData.fieldHint,
           ),
+          enabled: formFieldsData.enabled,
           maxLines: formFieldsData.maxLines,
-          // minLines: formFieldsData.minLines,
           maxLength: formFieldsData.maxLength,
+          validator: FormBuilderValidators.compose([
+            if (formFieldsData.isMandatory) FormBuilderValidators.required(),
+            if (formFieldsData.minLength != null)
+              FormBuilderValidators.minLength(formFieldsData.minLength!),
+            if (formFieldsData.regexValidation != null)
+              FormBuilderValidators.match(
+                  RegExp(formFieldsData.regexValidation ?? '')),
+          ]),
         );
 }

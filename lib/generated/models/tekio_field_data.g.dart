@@ -14,14 +14,15 @@ TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioField
               TekioFieldType.unknown,
       fieldLabel: json['fieldLabel'] as String?,
       fieldHint: json['fieldHint'] as String?,
-      maxLines: (json['maxLines'] as num?)?.toInt(),
+      maxLines: (json['maxLines'] as num?)?.toInt() ?? 1,
       minLength: (json['minLength'] as num?)?.toInt(),
       maxLength: (json['maxLength'] as num?)?.toInt(),
-      isMandatory: json['isMandatory'] as bool?,
+      isMandatory: json['isMandatory'] as bool? ?? false,
       order: (json['order'] as num?)?.toInt(),
       regexValidation: json['regexValidation'] as String?,
       maxValue: (json['maxValue'] as num?)?.toInt(),
       minValue: (json['minValue'] as num?)?.toInt(),
+      enabled: json['enabled'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String, dynamic>{
@@ -37,6 +38,7 @@ Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String,
       'minValue': instance.minValue,
       'maxValue': instance.maxValue,
       'isMandatory': instance.isMandatory,
+      'enabled': instance.enabled,
       'regexValidation': instance.regexValidation,
     };
 

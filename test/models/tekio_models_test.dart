@@ -1,17 +1,13 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tekio_forms/models/tekio_form_data.dart';
 
+import '../test_util_data/test_utils/test_data.dart';
+import '../test_util_data/test_utils/test_init.dart';
+
 Future<void> main() async {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestInit.initBasics();
 
-  final String jsonString =
-      await rootBundle.loadString('test/test_json_data/test_form_build_data/json_form_data_01.json');
-
-  final TekioFormData formData = TekioFormData.fromJson(jsonDecode(jsonString));
-
+  final TekioFormData formData = await TestData.basicFormData01;
   test('Form section data order', () async {
     expect(formData.formSections[0].sectionKey, "section_key_0");
     expect(formData.formSections[1].sectionKey, "section_key_1");
