@@ -39,14 +39,24 @@
             {
                "order": 0,
                "fieldKey": "date_key_0",
-               "fieldLabel": "Date Label 0",
-               "fieldType": "dateField"
+               "fieldLabel": "Date Label",
+               "fieldType": "dateField",
+               "dateTimeType": "date",
+               "isMandatory": true
             },
             {
                "order": 1,
-               "fieldKey": "date_key_01",
-               "fieldLabel": "Date Label 01",
-               "fieldType": "dateField"
+               "fieldKey": "date_key_1",
+               "fieldLabel": "Time Label",
+               "fieldType": "dateField",
+               "dateTimeType": "time"
+            },
+            {
+               "order": 2,
+               "fieldKey": "date_key_2",
+               "fieldLabel": "Time and Date Label",
+               "fieldType": "dateField",
+               "dateTimeType": "both"
             }
          ]
       }

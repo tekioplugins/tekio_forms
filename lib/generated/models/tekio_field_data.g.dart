@@ -24,6 +24,8 @@ TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) =>
       maxValue: (json['maxValue'] as num?)?.toInt(),
       minValue: (json['minValue'] as num?)?.toInt(),
       enabled: json['enabled'] as bool? ?? true,
+      dateTimeType:
+          $enumDecodeNullable(_$DateTimeTypeEnumMap, json['dateTimeType']),
     );
 
 Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) =>
@@ -42,10 +44,17 @@ Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) =>
       'isMandatory': instance.isMandatory,
       'enabled': instance.enabled,
       'regexValidation': instance.regexValidation,
+      'dateTimeType': _$DateTimeTypeEnumMap[instance.dateTimeType],
     };
 
 const _$TekioFieldTypeEnumMap = {
   TekioFieldType.textField: 'textField',
   TekioFieldType.dateField: 'dateField',
   TekioFieldType.unknown: 'unknown',
+};
+
+const _$DateTimeTypeEnumMap = {
+  DateTimeType.date: 'date',
+  DateTimeType.time: 'time',
+  DateTimeType.both: 'both',
 };
