@@ -13,6 +13,8 @@ Welcome to the Tekio Forms Documentation.
 
 - [Text Form](/documentation/text_form.md)
 
+- [Date Form](/documentation/date_form.md)
+
 ## Example
 
 This is a simple example for rapid testing.
