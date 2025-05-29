@@ -6,12 +6,13 @@ part of '../../models/tekio_field_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioFieldData(
+TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) =>
+    TekioFieldData(
       fieldKey: json['fieldKey'] as String,
       groupingKey: json['groupingKey'] as String?,
-      fieldType:
-          $enumDecodeNullable(_$TekioFieldTypeEnumMap, json['fieldType'], unknownValue: TekioFieldType.unknown) ??
-              TekioFieldType.unknown,
+      fieldType: $enumDecodeNullable(_$TekioFieldTypeEnumMap, json['fieldType'],
+              unknownValue: TekioFieldType.unknown) ??
+          TekioFieldType.unknown,
       fieldLabel: json['fieldLabel'] as String?,
       fieldHint: json['fieldHint'] as String?,
       maxLines: (json['maxLines'] as num?)?.toInt() ?? 1,
@@ -25,7 +26,8 @@ TekioFieldData _$TekioFieldDataFromJson(Map<String, dynamic> json) => TekioField
       enabled: json['enabled'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String, dynamic>{
+Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) =>
+    <String, dynamic>{
       'order': instance.order,
       'groupingKey': instance.groupingKey,
       'fieldKey': instance.fieldKey,
@@ -44,5 +46,6 @@ Map<String, dynamic> _$TekioFieldDataToJson(TekioFieldData instance) => <String,
 
 const _$TekioFieldTypeEnumMap = {
   TekioFieldType.textField: 'textField',
+  TekioFieldType.dateField: 'dateField',
   TekioFieldType.unknown: 'unknown',
 };

@@ -32,35 +32,21 @@
       },
       {
          "order": 1,
-         "sectionKey": "section_key_1",
-         "sectionTitle": "section_title_1",
-         "sectionSubtitle": "section_subtitle_1",
+         "sectionKey": "date_form_key",
+         "sectionTitle": "Date Fields",
+         "sectionSubtitle": "Date Field Example",
          "formFields": [
             {
                "order": 0,
-               "fieldKey": "field_key_7",
-               "fieldLabel": "field_label_7",
-               "fieldType": "textField"
+               "fieldKey": "date_key_0",
+               "fieldLabel": "Date Label 0",
+               "fieldType": "dateField"
             },
             {
                "order": 1,
-               "fieldKey": "field_key_8",
-               "fieldLabel": "field_label_8",
-               "fieldType": "textField"
-            }
-         ]
-      },
-      {
-         "order": 2,
-         "sectionKey": "section_key_2",
-         "sectionTitle": "section_title_2",
-         "sectionSubtitle": "section_subtitle_2",
-         "formFields": [
-            {
-               "order": 0,
-               "fieldKey": "field_key_9",
-               "fieldLabel": "field_label_9",
-               "fieldType": "textField"
+               "fieldKey": "date_key_01",
+               "fieldLabel": "Date Label 01",
+               "fieldType": "dateField"
             }
          ]
       }
